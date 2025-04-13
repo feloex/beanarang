@@ -19,7 +19,7 @@ export default defineConfig({
     server: {
         port: 3001,
         host: "0.0.0.0", // Allow connections from any host
-        allowedHosts: [".ngrok-free.app"]
+        allowedHosts: [".ngrok-free.app",".euw.devtunnels.ms"]
     },
     build: {
         // disable this for low bundle sizes

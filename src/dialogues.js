@@ -48,7 +48,7 @@ export function setupDialogues(ui) {
                 play("stop", {
                     volume: 0.6,
                     speed: randi(1, 2),
-                    detune: randi(10, 20)*100,
+                    detune: randi(10, 20) * 100
                 });
                 index++;
             } else {

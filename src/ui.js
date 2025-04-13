@@ -10,19 +10,6 @@ export function createUI() {
         layer("ui"),
     ]);
 
-    // Add health and score text
-    const healthText = add([
-        text("Health: 100", { size: 64 }),
-        pos(10, height() - barHeight + 10),
-        layer("ui"),
-    ]);
-
-    const scoreText = add([
-        text("Score: 0", { size: 64 }),
-        pos(10, height() - barHeight + 70),
-        layer("ui"),
-    ]);
-
     // Add bean sprite box
     const beanBoxSize = 220;
     add([
@@ -36,6 +23,7 @@ export function createUI() {
         sprite("bean", { width: beanBoxSize - 40, height: beanBoxSize - 40 }),
         pos(width() - beanBoxSize - 20 + beanBoxSize / 2 - (beanBoxSize - 40) / 2, height() - barHeight + 20 + beanBoxSize / 2 - (beanBoxSize - 40) / 2),
         layer("ui"),
+        area({ shape: new Circle(vec2(beanBoxSize / 2-20, beanBoxSize / 2-20), (beanBoxSize - 40) / 2) }),
     ]);
 
     // Add dialogue textbox
@@ -57,5 +45,5 @@ export function createUI() {
         layer("ui"),
     ]);
 
-    return { healthText, scoreText, dialogueText, beanSprite };
+    return {dialogueText, beanSprite};
 }

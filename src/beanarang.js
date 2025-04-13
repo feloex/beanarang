@@ -5,13 +5,14 @@ export function setupBoomerang(ui) {
         sprite("bean"),
         pos(width() / 2, height() * beanHeightMultiplier),
         anchor("center"),
-        area(),
+        area({ shape: new Circle(vec2(0,0), 28) }),
         { isDragging: false, startPos: null, velocity: null },
     ]);
 
     let dragIndicator = add([
         rect(1, 4, { radius: 2 }),
         color(255, 255, 255),
+        opacity(0.73),
         anchor("left"),
         layer("drager"),
         { visible: false },
@@ -89,6 +90,8 @@ export function setupBoomerang(ui) {
             play("hit", {
                 volume: 0.7,
                 speed: 3.5,
+                detune: 0 * 100,
+                seek: 0.08
             });
         }
     });
